@@ -25,10 +25,10 @@ nadal = turtle.Turtle()
 nadal.speed(0)
 nadal.shape("square")
 nadal.color("#FF8000")
-nadal.shapesize(stretch_wid=8, stretch_len=1, outline=6)
+nadal.shapesize(stretch_wid=10, stretch_len=1, outline=6)
 nadal.penup()
 nadal.goto(350, 0)
-nadal.dy = 0.6
+nadal.dy = 0.2
 
 # ball
 ball = turtle.Turtle()
@@ -37,8 +37,8 @@ ball.shape("circle")
 ball.color("#FFFF00")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.25
-ball.dy = -0.25
+ball.dx = 0.1
+ball.dy = -0.1
 
 # pen
 pen = turtle.Turtle()
@@ -126,8 +126,8 @@ while True:
     # paddle and ball collistions
     if ball.xcor() < -340 and ball.ycor() < federer.ycor() + 40 and ball.ycor() > federer.ycor() - 40:
         ball.dx *= -1
-        os.system("aplay punch.wav&")
+        os.system("aplay shot.wav&")
 
     elif ball.xcor() > 340 and ball.ycor() < nadal.ycor() + 40 and ball.ycor() > nadal.ycor() - 40:
         ball.dx *= -1
-        os.system("aplay boom.wav&")
+        os.system("aplay shot.wav&")
